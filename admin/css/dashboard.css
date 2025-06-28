@@ -1,0 +1,309 @@
+#log-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+#log-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}
+#log-container .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#log-container .layer #admin-log form {
+  max-width: 700px;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 3px rgba(0, 0, 0, 0.3);
+}
+#log-container .layer #admin-log form h1 {
+  align-self: start;
+  margin: 20px 0;
+}
+#log-container .layer #admin-log form span {
+  color: red;
+  align-self: flex-start;
+}
+
+#log-container .layer #admin-log form input {
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  width: 500px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+}
+
+#log-container .layer #admin-log form input:focus {
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+}
+#log-container .layer #admin-log form [type="submit"] {
+  width: auto;
+  padding: 10px 50px;
+  color: #fff;
+  background-color: tomato;
+  align-self: flex-start;
+}
+#log-container .layer #admin-log form [type="submit"]:hover {
+  opacity: 0.7;
+}
+
+.success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+}
+.success .content {
+  width: 500px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 70px;
+  gap: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
+}
+.success .content a {
+  padding: 10px 50px;
+  color: #fff;
+  background-color: tomato;
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+.success .content a:hover {
+  opacity: 0.7;
+}
+/* -------------- */
+
+#dashboard-container {
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 50px 0 0 0;
+  background-color: #eee;
+  position: relative;
+}
+#dashboard-container .dashboard-content {
+  width: 90%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+#dashboard-container .dashboard-content a {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2b2b2b;
+  background-color: #fff;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  transition: 0.5s;
+}
+
+#dashboard-container .dashboard-content a:hover {
+  background-color: tomato;
+  color: #fff;
+}
+/* ------------------------ */
+#selection-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; */
+}
+#selection-container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+#selection-container .layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#selection-container .layer a {
+  background-color: #fff;
+  padding: 30px 70px;
+  width: auto;
+  color: #2b2b2b;
+  transition: 0.5s;
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+#selection-container .layer a:hover {
+  background-color: tomato;
+  color: #fff;
+}
+#dashboard-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  width: 100%;
+  height: calc(100vh - 50px);
+}
+#dashboard-container .layer form {
+  max-width: 700px;
+  padding: 50px 30px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  align-items: flex-start;
+}
+#dashboard-container .layer form h2 {
+  align-self: start;
+  margin: 20px 0;
+}
+#dashboard-container .layer form span {
+  color: red;
+  align-self: start;
+}
+#dashboard-container .layer form input,
+#dashboard-container .layer form textarea {
+  width: 500px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
+}
+#dashboard-container .layer form input:focus,
+#dashboard-container .layer form textarea:focus {
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.2);
+}
+#dashboard-container .layer form [type="submit"] {
+  width: auto;
+  padding: 10px 50px;
+  align-self: flex-start;
+  color: #fff;
+  background-color: tomato;
+}
+#dashboard-container .layer form .product-images {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+}
+#dashboard-container .layer form img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: relative;
+}
+#dashboard-container .layer form [type="submit"]:hover {
+  opacity: 0.7;
+}
+#dashboard-container .layer {
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* ---------------- */
+table {
+  margin-top: 50px;
+  width: 100%;
+  text-align: center;
+}
+table tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+table thead tr {
+  background-color: black;
+  color: #fff;
+}
+table tr td,
+table tr th {
+  padding: 10px;
+}
+
+table tbody tr td img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+table tbody tr .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+table tbody tr .actions form input {
+  padding: 5px 10px;
+  color: #fff;
+  background-color: green;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+table tbody tr .actions form:nth-child(2) input {
+  background-color: rgb(180, 0, 0);
+}

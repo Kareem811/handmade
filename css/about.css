@@ -1,0 +1,36 @@
+#about {
+  width: 90%;
+  margin: 60px auto;
+  height: 50vh;
+  min-height: 70vh;
+  display: grid;
+  column-gap: 30px;
+  grid-template-columns: 1fr 2fr;
+}
+#about img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+#about .data {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+#about .data h1 {
+  font-size: 35px;
+  position: relative;
+}
+#about .data h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50%;
+  height: 2px;
+  background-color: tomato;
+}
