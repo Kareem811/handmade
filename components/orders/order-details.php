@@ -39,7 +39,18 @@ $items = mysqli_query($conn, "
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/nav.css">
     <style>
+        #order-details {
+            width: 90%;
+            min-height: 100vh;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .order-item {
+            width: 80%;
             background: #f0f0f0;
             margin: 10px;
             padding: 10px;

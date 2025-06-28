@@ -18,7 +18,7 @@ if (isset($_SESSION['active']) && $_SESSION['active']['role'] === 'user') {
         </ul>
         <div class="sign">
             <?php if (isset($_SESSION['active'])) { ?>
-                <a href="../../profile.php">Welcome <?= $_SESSION['active']['name'] ?></a>
+                <a href="/handmade/components/profile/profile.php">Welcome <?= $_SESSION['active']['name'] ?></a>
                 <?php if ($_SESSION['active']['role'] === "user") { ?>
                     <a href="/handmade/components/cart/cart.php">Cart (<?= $cartCount ?>)</a>
                 <?php } ?>

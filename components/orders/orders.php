@@ -1,5 +1,6 @@
 <?php
 require '../../conn.php';
+session_start();
 if (!isset($_SESSION['active']) || $_SESSION['active']['role'] !== 'user') {
     header("location: ../../login.php");
     exit;
@@ -17,9 +18,20 @@ $orders = mysqli_query($conn, "SELECT * FROM orders WHERE user_id = $userId ORDE
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/nav.css">
     <style>
+        #orders-container {
+            width: 100%;
+            min-height: 100vh;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .order {
+            width: 100%;
             background: #f9f9f9;
-            margin: 20px auto;
+            margin: 10px auto;
             max-width: 800px;
             border: 1px solid #ddd;
             padding: 15px;

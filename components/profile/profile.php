@@ -18,6 +18,7 @@ $user = $_SESSION['active'];
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Profile</title>
     <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/nav.css">
     <style>
         .profile-container {
             max-width: 800px;
@@ -77,7 +78,8 @@ $user = $_SESSION['active'];
         <div class="profile-body">
             <p><strong>Email:</strong> <?= $user['email'] ?></p>
             <p><strong>Role:</strong> <?= $user['role'] ?></p>
-            <a href="/handmade/components/orders/orders.php">View My Orders</a>
+            <!-- <a href="/handmade/components/orders/orders.php">View My Orders</a> -->
+            <a href="../orders/orders.php">View My Orders</a>
         </div>
     </div>
 </body>
