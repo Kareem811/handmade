@@ -9,7 +9,7 @@ if (isset($_SESSION['active']) && $_SESSION['active']['role'] === 'user') {
 ?>
 <header>
     <nav>
-        <a href="/"><img src="assets/logo/twitter-logo.png" alt="logo"></a>
+        <a href="/"><img src="/handmade/assets/logo/twitter-logo.png" alt="logo"></a>
         <ul>
             <li><a href="/handmade/index.php">Home</a></li>
             <li><a href="/handmade/about.php">About</a></li>
@@ -18,9 +18,16 @@ if (isset($_SESSION['active']) && $_SESSION['active']['role'] === 'user') {
         </ul>
         <div class="sign">
             <?php if (isset($_SESSION['active'])) { ?>
-                <a href="/handmade/components/profile/profile.php">Welcome <?= $_SESSION['active']['name'] ?></a>
+                <!-- <a href="/handmade/components/profile/profile.php">Welcome <?= $_SESSION['active']['name'] ?></a> -->
+                <a href="/handmade/components/profile/profile.php">
+                    <img src="/handmade/assets/logo/avatar.webp" alt="">
+                </a>
                 <?php if ($_SESSION['active']['role'] === "user") { ?>
-                    <a href="/handmade/components/cart/cart.php">Cart (<?= $cartCount ?>)</a>
+                    <!-- <a href="/handmade/components/cart/cart.php">Cart (<?= $cartCount ?>)</a> -->
+                    <a href="/handmade/components/cart/cart.php" class="cart">
+                        <span class="cart-icon">🛒</span>
+                        <span class="count"><?= $cartCount ?></span>
+                    </a>
                 <?php } ?>
                 <form method="post" style="display:inline">
                     <button name="logout">Logout</button>

@@ -4,7 +4,7 @@ session_start();
 
 // لازم يكون لوجن
 if (!isset($_SESSION['active']) || $_SESSION['active']['role'] !== 'user') {
-    header("location: ../../login.php");
+    header("location: /handmade/login.php");
     exit;
 }
 
@@ -36,25 +36,40 @@ if (isset($_POST['clear'])) {
     header("location: cart.php");
     exit;
 }
+
+// handle checkout
 if (isset($_POST['checkout'])) {
     if (count($items) > 0) {
         $grandTotal = 0;
         foreach ($items as $item) {
             $grandTotal += $item['price'] * $item['quantity'];
         }
+
         $orderQuery = "
             INSERT INTO orders (user_id, total_price, status, created_at)
             VALUES ($userId, $grandTotal, 'pending', NOW())
         ";
         $orderDone = mysqli_query($conn, $orderQuery);
+
         if ($orderDone) {
             $orderId = mysqli_insert_id($conn);
+
             foreach ($items as $item) {
+                // add to order_items
                 mysqli_query($conn, "
                     INSERT INTO order_items (order_id, product_id, quantity, price)
                     VALUES ($orderId, {$item['id']}, {$item['quantity']}, {$item['price']})
                 ");
+
+                // update product stock
+                mysqli_query($conn, "
+                    UPDATE products
+                    SET stock_quantity = stock_quantity - {$item['quantity']}
+                    WHERE id = {$item['id']} AND stock_quantity >= {$item['quantity']}
+                ");
             }
+
+            // clear cart
             mysqli_query($conn, "DELETE FROM cart WHERE user_id = $userId");
 
             header("location: /handmade/components/orders/orders.php?success=1");

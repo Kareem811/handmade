@@ -22,7 +22,7 @@ $user = $_SESSION['active'];
     <style>
         .profile-container {
             max-width: 800px;
-            margin: 30px auto;
+            margin: 60px auto;
             background: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
