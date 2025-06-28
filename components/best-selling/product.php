@@ -1,6 +1,6 @@
 <?php
 require "../../conn.php";
-
+session_start();
 if (isset($_GET['id'])) {
     $id = intval($_GET['id']); // تأمين id
     $query = "
@@ -33,8 +33,7 @@ if (isset($_GET['id'])) {
             <div class="products">
                 <?php if ($product) {
                     $arr = explode(',', $product['images']);
-                ?>
-                    <?php if (!empty($arr[0])) { ?>
+                    if (!empty($arr[0])) { ?>
                         <img src="../../admin/<?= $arr[0]; ?>" alt="<?= $product['name'] ?>">
                     <?php } ?>
                     <div class="product">
@@ -42,21 +41,21 @@ if (isset($_GET['id'])) {
                         <span>Price: $<?= $product['price']; ?></span>
                         <span>Available Stock: <?= $product['stock_quantity']; ?></span>
                         <p><?= $product['description']; ?></p>
-                        <?php
-                        if (count($arr) > 0) { ?>
-                            <div class="images">
-                                <h3>Product Images</h3>
-                                <?php
-                                foreach ($arr as $src) {
-                                ?>
-                                    <img src="../../admin/<?= $src ?>" alt="">
-                                <?php
-                                }
-                                ?>
-                            </div>
-                        <?php }
-                        ?>
                     </div>
+                    <?php
+                    if (count($arr) > 0) { ?>
+                        <div class="images">
+                            <h4>Product Images</h4>
+                            <?php
+                            foreach ($arr as $src) {
+                            ?>
+                                <img src="../../admin/<?= $src ?>" alt="">
+                            <?php
+                            }
+                            ?>
+                        </div>
+                    <?php }
+                    ?>
 
                 <?php } else { ?>
                     <p style="color:red; font-size:20px;">No data for this product.</p>

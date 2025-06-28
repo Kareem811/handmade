@@ -1,4 +1,6 @@
-<?php require 'conn.php'; ?>
+<?php require 'conn.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
